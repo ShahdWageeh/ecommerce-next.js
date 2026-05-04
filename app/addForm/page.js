@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { getAllProducts } from "@/lib/products";
 
 function AddProduct() {
   const router = useRouter();
@@ -76,7 +75,6 @@ function AddProduct() {
         ratingsAverage: 0,
         ratingsQuantity: 0,
       });
-      getAllProducts()
       setTimeout(() => {
         router.push("/products");
       }, 2000);
