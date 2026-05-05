@@ -53,7 +53,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="w-[50%] mx-auto p-6">
+    <div className="lg:w-[50%] md:w-[70%] w-full mx-auto p-6">
       <h1 className="text-3xl font-bold mb-4 text-center">Register</h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">

@@ -2,8 +2,11 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 export default function EditModal({ product }) {
+  const { data } = useSession();
+  const user = data?.user;
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
@@ -48,9 +51,14 @@ export default function EditModal({ product }) {
 
   return (
     <>
-      <button onClick={() => setOpen(true)} className="btn btn-warning w-[49%]">
-        Edit
-      </button>
+      {user && (
+        <button
+          onClick={() => setOpen(true)}
+          className="btn btn-warning w-[49%]"
+        >
+          Edit
+        </button>
+      )}
       {open && (
         <div className="fixed inset-0 z-999 bg-black/50 flex items-center justify-center">
           <form

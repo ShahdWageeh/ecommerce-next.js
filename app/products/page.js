@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getAllProducts } from "@/lib/products";
+import AddBtn from "@/components/AddBtn";
 export const dynamic = "force-dynamic";
 async function Products() {
   const data = await getAllProducts();
@@ -8,12 +9,7 @@ async function Products() {
     <>
       <div className="w-[90%] m-auto flex justify-between mt-3">
         <h2 className="text-3xl font-bold">PRODUCTS</h2>
-        <Link
-          className="bg-black text-white p-2 rounded-lg hover:bg-gray-800 transition"
-          href="/addForm"
-        >
-          + Add Product
-        </Link>
+        <AddBtn/>
       </div>
       <div className="w-[90%] m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 my-8 gap-6 px-4">
         {data?.map((product) => (

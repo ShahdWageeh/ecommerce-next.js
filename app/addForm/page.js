@@ -87,7 +87,7 @@ function AddProduct() {
   };
 
   return (
-    <div className="w-[70%] mx-auto p-6">
+    <div className="w-full md:w-[80%] lg:w-[70%] mx-auto p-6">
       <h1 className="text-3xl font-bold mb-8 text-center">Add New Product</h1>
 
       <form onSubmit={handleSubmit} className="space-y-6">
